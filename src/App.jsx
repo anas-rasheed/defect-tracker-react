@@ -1,4 +1,6 @@
-function App() {
+import React from 'react';
+
+const App = () => {
   return (
     //TODO: create components and initialize redux store with dev tool integration
     <div>
@@ -6,6 +8,6 @@ function App() {
       <h1>Let's create</h1>
     </div>
   );
-}
+};
 
 export default App;
