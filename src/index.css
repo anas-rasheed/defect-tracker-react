@@ -4,9 +4,10 @@ body {
     sans-serif;
   background: linear-gradient(
     to right bottom,
-    rgb(111, 252, 230, 0.8),
-    rgb(157, 160, 252, 1)
+    rgba(111, 252, 230, 0.8),
+    rgba(157, 160, 252, 1)
   );
+  position: relative;
 }
 html,
 body,

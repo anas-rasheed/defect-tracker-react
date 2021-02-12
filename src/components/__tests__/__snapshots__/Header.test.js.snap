@@ -3,11 +3,35 @@
 exports[`Header Component should render Header component 1`] = `
 <Fragment>
   <styled.nav>
-    <Link
-      to="/postingRouter"
-    >
-      Brand
-    </Link>
+    <styled.span>
+      <Link
+        to="/postingRouter"
+      >
+        Brand
+      </Link>
+    </styled.span>
+    <styled.span>
+      <Link
+        to="/"
+      >
+        First
+      </Link>
+      <Link
+        to="/"
+      >
+        Second
+      </Link>
+      <Link
+        to="/"
+      >
+        Third
+      </Link>
+      <Link
+        to="/"
+      >
+        Fourth
+      </Link>
+    </styled.span>
   </styled.nav>
 </Fragment>
 `;
