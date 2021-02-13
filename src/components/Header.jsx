@@ -1,6 +1,8 @@
 import React from 'react';
+import { connect, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { logOut } from '../redux/slices';
 
 const StyledNavbar = styled.nav`
   height: 60px;
@@ -50,7 +52,11 @@ const StyledNavLinks = styled.span`
   }
 `;
 
-const Header = () => {
+const Header = ({ isLoggedIn }) => {
+  const dispatch = useDispatch();
+  const handleLogout = () => {
+    dispatch(logOut());
+  };
   return (
     <>
       <StyledNavbar>
@@ -61,11 +67,19 @@ const Header = () => {
           <Link to='/'>First</Link>
           <Link to='/'>Second</Link>
           <Link to='/'>Third</Link>
-          <Link to='/'>Fourth</Link>
+          {isLoggedIn === false ? (
+            <Link to='/login'>Login</Link>
+          ) : (
+            <Link to='/login' onClick={handleLogout}>
+              Logout
+            </Link>
+          )}
         </StyledNavLinks>
       </StyledNavbar>
     </>
   );
 };
-
-export default Header;
+const mapStateToProps = state => ({
+  isLoggedIn: state.isLoggedIn,
+});
+export default connect(mapStateToProps)(Header);
