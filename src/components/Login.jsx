@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import { logIn } from '../redux/slices';
 import styled from 'styled-components';
+import { dispatchLoginAction } from '../redux/actions';
 
 const StyledWrapper = styled.div`
   height: 100%;
@@ -45,7 +45,8 @@ const Login = () => {
   const history = useHistory();
   const handleSubmit = event => {
     event.preventDefault();
-    dispatch(logIn(credentials));
+    // dispatch(logIn(credentials));
+    dispatch(dispatchLoginAction(credentials));
     history.push('/');
   };
   const handleChange = event => {

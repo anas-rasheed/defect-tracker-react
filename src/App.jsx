@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import Header from './components/Header';
-import { store } from './redux/slices';
+import store from './redux/store';
 import Login from './components/Login';
 import Dashboard from './components/Dashboard';
 

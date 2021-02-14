@@ -2,7 +2,7 @@ import React from 'react';
 import { connect, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { logOut } from '../redux/slices';
+import { logout } from '../redux/slices/authSlice';
 
 const StyledNavbar = styled.nav`
   height: 60px;
@@ -55,7 +55,7 @@ const StyledNavLinks = styled.span`
 const Header = ({ isLoggedIn }) => {
   const dispatch = useDispatch();
   const handleLogout = () => {
-    dispatch(logOut());
+    dispatch(logout());
   };
   return (
     <>
@@ -80,6 +80,6 @@ const Header = ({ isLoggedIn }) => {
   );
 };
 const mapStateToProps = state => ({
-  isLoggedIn: state.isLoggedIn,
+  isLoggedIn: state.authReducer.isLoggedIn,
 });
 export default connect(mapStateToProps)(Header);
