@@ -27,9 +27,9 @@ exports[`Header Component should render Header component 1`] = `
         Third
       </Link>
       <Link
-        to="/"
+        to="/login"
       >
-        Fourth
+        Logout
       </Link>
     </styled.span>
   </styled.nav>

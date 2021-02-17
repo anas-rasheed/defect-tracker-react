@@ -5,8 +5,8 @@ import styled from 'styled-components';
 import { dispatchLoginAction } from '../redux/actions';
 
 const StyledWrapper = styled.div`
-  height: 100%;
-  widht: 100%;
+  height: calc(100% - 60px);
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -30,7 +30,7 @@ const StyledContainer = styled.div`
     rgba(255, 255, 255, 0.4),
     rgba(255, 255, 255, 0.2)
   );
-  backdrop-filter: blur(15px);
+  backdrop-filter: blur(7px);
   box-shadow: 6px 6px 20px rgba(157, 160, 252, 0.8);
   z-index: 2;
 `;
@@ -45,7 +45,6 @@ const Login = () => {
   const history = useHistory();
   const handleSubmit = event => {
     event.preventDefault();
-    // dispatch(logIn(credentials));
     dispatch(dispatchLoginAction(credentials));
     history.push('/');
   };

@@ -52,11 +52,7 @@ const StyledNavLinks = styled.span`
   }
 `;
 
-const Header = ({ isLoggedIn }) => {
-  const dispatch = useDispatch();
-  const handleLogout = () => {
-    dispatch(logout());
-  };
+export const Header = ({ isLoggedIn, logout }) => {
   return (
     <>
       <StyledNavbar>
@@ -70,7 +66,7 @@ const Header = ({ isLoggedIn }) => {
           {isLoggedIn === false ? (
             <Link to='/login'>Login</Link>
           ) : (
-            <Link to='/login' onClick={handleLogout}>
+            <Link to='/login' onClick={logout}>
               Logout
             </Link>
           )}
@@ -82,4 +78,7 @@ const Header = ({ isLoggedIn }) => {
 const mapStateToProps = state => ({
   isLoggedIn: state.authReducer.isLoggedIn,
 });
-export default connect(mapStateToProps)(Header);
+const mapDispatchtoProps = dispatch => {
+  return { logout: () => dispatch(logout()) };
+};
+export default connect(mapStateToProps, mapDispatchtoProps)(Header);
