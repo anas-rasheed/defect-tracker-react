@@ -1,1 +1,5 @@
-export const dispatchLoginAction = payload => ({ type: 'LOGIN', payload });
+import { createAction } from '@reduxjs/toolkit';
+
+export const apiCallStart = createAction('apiCallStart');
+export const apiCallSuccess = createAction('apiCallSuccess');
+export const apiCallFailed = createAction('apiCallFailed');

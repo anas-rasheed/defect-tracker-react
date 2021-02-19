@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { apiCallFailed, apiCallStart, apiCallSuccess } from '../actions';
 
 const authSlice = createSlice({
   name: 'auth',
@@ -15,5 +16,14 @@ const authSlice = createSlice({
   },
 });
 export const { login, logout } = authSlice.actions;
+
+export const authenticate = credentials =>
+  apiCallStart({
+    url: `login`,
+    method: 'POST',
+    data: credentials,
+    onSuccess: apiCallSuccess.type,
+    onError: apiCallFailed.type,
+  });
 
 export default authSlice.reducer;
