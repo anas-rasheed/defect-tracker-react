@@ -1,11 +1,8 @@
-import { put, call, takeLatest } from 'redux-saga/effects';
-import { loginApiCall } from '../../api';
+import { put, takeLatest } from 'redux-saga/effects';
 import { login, logout } from '../slices/authSlice';
 
-export function* loginSaga(action) {
-  const response = yield call(loginApiCall, action.payload);
-
-  if (response.status === 201) {
+export function* loginSaga({ payload }) {
+  if (payload.status === 201) {
     yield put(login());
   } else {
     yield put(logout());
@@ -13,5 +10,5 @@ export function* loginSaga(action) {
 }
 
 export function* watchLoginSaga() {
-  yield takeLatest('LOGIN', loginSaga);
+  yield takeLatest('apiCallSuccess/login', loginSaga);
 }

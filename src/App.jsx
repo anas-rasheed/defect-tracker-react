@@ -4,22 +4,20 @@ import { Provider } from 'react-redux';
 import Header from './components/Header';
 import store from './redux/store';
 import Login from './components/Login';
-import Dashboard from './components/Dashboard';
+// import Dashboard from './components/Dashboard';
+import HomePage from './components/HomePage';
 
 const App = () => {
   return (
-    //TODO: create components and initialize redux store with dev tool integration
-    <>
-      <Provider store={store}>
-        <Router>
-          <Header />
-          <Switch>
-            <Route path='/' exact component={Dashboard} />
-            <Route path='/login' component={Login} />
-          </Switch>
-        </Router>
-      </Provider>
-    </>
+    <Provider store={store}>
+      <Router>
+        <Header />
+        <Switch>
+          <Route path='/' exact component={HomePage} />
+          <Route path='/login' component={Login} />
+        </Switch>
+      </Router>
+    </Provider>
   );
 };
 

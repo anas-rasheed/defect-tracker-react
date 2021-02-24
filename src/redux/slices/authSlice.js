@@ -17,13 +17,16 @@ const authSlice = createSlice({
 });
 export const { login, logout } = authSlice.actions;
 
+const apiCallOptions = {
+  url: `login`,
+  method: 'POST',
+};
 export const authenticate = credentials =>
   apiCallStart({
-    url: `login`,
-    method: 'POST',
+    ...apiCallOptions,
     data: credentials,
-    onSuccess: apiCallSuccess.type,
-    onError: apiCallFailed.type,
+    onSuccess: `${apiCallSuccess.type}/${apiCallOptions.url}`,
+    onError: `${apiCallFailed.type}/${apiCallOptions.url}`,
   });
 
 export default authSlice.reducer;

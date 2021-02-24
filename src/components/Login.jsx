@@ -1,10 +1,7 @@
 import React, { useState } from 'react';
-import { connect, useDispatch } from 'react-redux';
-// import { useHistory } from 'react-router-dom';
+import { connect } from 'react-redux';
 import styled from 'styled-components';
 import { authenticate } from '../redux/slices/authSlice';
-// import { dispatchLoginAction } from '../redux/actions';
-// import post from '../redux/slices/apiSlice';
 
 const StyledWrapper = styled.div`
   height: calc(100% - 60px);
@@ -16,7 +13,7 @@ const StyledWrapper = styled.div`
     background: red;
     height: 100px;
     width: 200px;
-    top: 190px;
+    top: 11.875rem;
     position: absolute;
   }
 `;
@@ -38,19 +35,12 @@ const StyledContainer = styled.div`
 `;
 const StyledInput = styled.div``;
 
-export const Login = () => {
-  const dispatch = useDispatch();
+export const Login = ({ authenticate }) => {
   const [credentials, setCredentials] = useState({
     username: '',
     password: '',
   });
-  // const dispatch = useDispatch();
-  // const history = useHistory();
-  // const handleSubmit = event => {
-  //   event.preventDefault();
-  //   dispatch(dispatchLoginAction(credentials));
-  //   history.push('/');
-  // };
+
   const handleChange = event => {
     setCredentials({ ...credentials, [event.target.name]: event.target.value });
   };
@@ -67,10 +57,7 @@ export const Login = () => {
             <label htmlFor='password'>Password</label>
             <input name='password' type='password' onChange={handleChange} />
           </StyledInput>
-          <button
-            type='button'
-            onClick={() => dispatch(authenticate(credentials))}
-          >
+          <button type='button' onClick={() => authenticate(credentials)}>
             Submit
           </button>
         </form>
@@ -78,9 +65,9 @@ export const Login = () => {
     </StyledWrapper>
   );
 };
-// const mapDispatchtoProps = dispatch => {
-//   return {
-//     authenticate: () => dispatch(authenticate()),
-//   };
-// };
-export default Login;
+const mapDispatchtoProps = dispatch => {
+  return {
+    authenticate: data => dispatch(authenticate(data)),
+  };
+};
+export default connect(null, mapDispatchtoProps)(Login);

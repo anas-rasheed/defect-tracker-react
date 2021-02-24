@@ -4,7 +4,10 @@ import rootSaga from '../sagas';
 import { rootReducer } from '../slices';
 
 const sagaMiddleware = createSagaMiddleware();
-const middleware = [...getDefaultMiddleware({ thunk: false }), sagaMiddleware];
+const middleware = [
+  ...getDefaultMiddleware({ thunk: false, serializableCheck: false }),
+  sagaMiddleware,
+];
 
 const store = configureStore({
   reducer: rootReducer,

@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { put, call, takeLatest, takeEvery } from 'redux-saga/effects';
+import { put, call, takeEvery } from 'redux-saga/effects';
 import * as actions from '../actions';
 const baseServerURL = 'http://localhost:5000/';
 
@@ -26,7 +26,7 @@ function* apiSaga(action) {
     if (onSuccess)
       yield put({
         type: onSuccess,
-        payload: response.data,
+        payload: response,
       });
   } catch (error) {
     if (onError) yield put({ type: onError, payload: error });

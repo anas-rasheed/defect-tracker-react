@@ -52,17 +52,17 @@ const StyledNavLinks = styled.span`
   }
 `;
 
-export const Header = ({ isLoggedIn }) => {
+export const Header = ({ isLoggedIn, logout }) => {
   return (
     <>
       <StyledNavbar>
         <StyledBrand>
-          <Link to='/postingRouter'>Brand</Link>
+          <Link to='/'>Brand</Link>
         </StyledBrand>
         <StyledNavLinks>
-          <Link to='/'>First</Link>
-          <Link to='/'>Second</Link>
-          <Link to='/'>Third</Link>
+          <Link to='/First'>First</Link>
+          <Link to='/Second'>Second</Link>
+          <Link to='/Third'>Third</Link>
           {isLoggedIn === false ? (
             <Link to='/login'>Login</Link>
           ) : (
