@@ -1,32 +1,44 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`App component should render App Component 1`] = `
-<Fragment>
-  <Provider
-    store={
-      Object {
-        "dispatch": [Function],
-        "getState": [Function],
-        "replaceReducer": [Function],
-        "subscribe": [Function],
-        Symbol(observable): [Function],
-      }
+<Provider
+  store={
+    Object {
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+      Symbol(observable): [Function],
     }
-  >
-    <BrowserRouter>
-      <Connect(Header) />
-      <Switch>
-        <Route
-          component={[Function]}
-          exact={true}
-          path="/"
-        />
-        <Route
-          component={[Function]}
-          path="/login"
-        />
-      </Switch>
-    </BrowserRouter>
-  </Provider>
-</Fragment>
+  }
+>
+  <BrowserRouter>
+    <Connect(Header) />
+    <Switch>
+      <Route
+        component={
+          Object {
+            "$$typeof": Symbol(react.memo),
+            "WrappedComponent": [Function],
+            "compare": null,
+            "type": [Function],
+          }
+        }
+        exact={true}
+        path="/"
+      />
+      <Route
+        component={
+          Object {
+            "$$typeof": Symbol(react.memo),
+            "WrappedComponent": [Function],
+            "compare": null,
+            "type": [Function],
+          }
+        }
+        path="/login"
+      />
+    </Switch>
+  </BrowserRouter>
+</Provider>
 `;

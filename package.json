@@ -52,6 +52,9 @@
     ]
   },
   "jest": {
+    "testMatch": [
+      "**/__tests__/*.test.js?(x)"
+    ],
     "collectCoverageFrom": [
       "src/**/*",
       "!/node_modules/**",

@@ -7,7 +7,7 @@ export const HomePage = ({ getDefects }) => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getDefects());
-  });
+  }, [dispatch]);
   return (
     <>
       <Dashboard />
