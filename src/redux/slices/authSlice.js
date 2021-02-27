@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { apiCallFailed, apiCallStart, apiCallSuccess } from '../actions';
+import { apiFailed, api, apiSuccess } from '../actions';
 
 const authSlice = createSlice({
   name: 'auth',
@@ -22,11 +22,11 @@ const apiCallOptions = {
   method: 'POST',
 };
 export const authenticate = credentials =>
-  apiCallStart({
+  api({
     ...apiCallOptions,
     data: credentials,
-    onSuccess: `${apiCallSuccess.type}/${apiCallOptions.url}`,
-    onError: `${apiCallFailed.type}/${apiCallOptions.url}`,
+    onSuccess: `${apiSuccess.type}/${apiCallOptions.url}`,
+    onError: `${apiFailed.type}/${apiCallOptions.url}`,
   });
 
 export default authSlice.reducer;

@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { apiCallFailed, apiCallStart, apiCallSuccess } from '../actions';
+import { apiFailed, api, apiSuccess } from '../actions';
 
 const defectsSlice = createSlice({
   name: 'defects',
@@ -18,10 +18,10 @@ const apiCallOptions = {
 };
 
 export const getDefects = () =>
-  apiCallStart({
+  api({
     ...apiCallOptions,
-    onSuccess: `${apiCallSuccess.type}/${apiCallOptions.url}`,
-    onError: `${apiCallFailed.type}/${apiCallOptions.url}`,
+    onSuccess: `${apiSuccess.type}/${apiCallOptions.url}`,
+    onError: `${apiFailed.type}/${apiCallOptions.url}`,
   });
 
 export default defectsSlice.reducer;

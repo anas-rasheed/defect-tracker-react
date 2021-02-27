@@ -6,5 +6,5 @@ export function* defectsSaga({ payload }) {
 }
 
 export function* watchDefectsSaga() {
-  yield takeLatest('apiCallSuccess/fetchDefects', defectsSaga);
+  yield takeLatest('apiSuccess/fetchDefects', defectsSaga);
 }

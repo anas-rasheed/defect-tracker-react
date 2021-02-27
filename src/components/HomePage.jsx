@@ -4,10 +4,10 @@ import { getDefects } from '../redux/slices/defectsSlice';
 import Dashboard from './Dashboard';
 
 export const HomePage = ({ getDefects }) => {
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(getDefects());
-  }, [dispatch]);
+  // const dispatch = useDispatch();
+  // useEffect(() => {
+  //   dispatch(getDefects());
+  // }, [dispatch]);
   return (
     <>
       <Dashboard />

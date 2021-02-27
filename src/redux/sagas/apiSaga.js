@@ -34,5 +34,5 @@ function* apiSaga(action) {
 }
 
 export function* watchApiSaga() {
-  yield takeEvery(actions.apiCallStart.type, apiSaga);
+  yield takeEvery(actions.api.type, apiSaga);
 }

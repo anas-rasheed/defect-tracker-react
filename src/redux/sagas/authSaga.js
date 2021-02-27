@@ -10,5 +10,5 @@ export function* loginSaga({ payload }) {
 }
 
 export function* watchLoginSaga() {
-  yield takeLatest('apiCallSuccess/login', loginSaga);
+  yield takeLatest('apiSuccess/login', loginSaga);
 }
