@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header Component should render Header component 1`] = `
+<Fragment>
+  <styled.nav>
+    <styled.span>
+      <Link
+        to="/"
+      >
+        Brand
+      </Link>
+    </styled.span>
+    <styled.span>
+      <Link
+        to="/First"
+      >
+        First
+      </Link>
+      <Link
+        to="/Second"
+      >
+        Second
+      </Link>
+      <Link
+        to="/Third"
+      >
+        Third
+      </Link>
+      <Link
+        to="/login"
+      >
+        Logout
+      </Link>
+    </styled.span>
+  </styled.nav>
+</Fragment>
+`;
