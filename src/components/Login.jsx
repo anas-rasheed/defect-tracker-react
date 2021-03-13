@@ -33,7 +33,6 @@ const StyledContainer = styled.div`
   box-shadow: 6px 6px 20px rgba(157, 160, 252, 0.8);
   z-index: 2;
 `;
-const StyledInput = styled.div``;
 
 export const Login = ({ authenticate }) => {
   const [credentials, setCredentials] = useState({
@@ -49,17 +48,41 @@ export const Login = ({ authenticate }) => {
       <div className='divid'></div>
       <StyledContainer>
         <form>
-          <StyledInput>
-            <label htmlFor='username'>Username</label>
-            <input name='username' type='text' onChange={handleChange} />
-          </StyledInput>
-          <StyledInput>
-            <label htmlFor='password'>Password</label>
-            <input name='password' type='password' onChange={handleChange} />
-          </StyledInput>
-          <button type='button' onClick={() => authenticate(credentials)}>
-            Submit
-          </button>
+          <table>
+            <tbody>
+              <tr>
+                <td>
+                  <label htmlFor='username'>Username</label>
+                </td>
+                <td>
+                  <input name='username' type='text' onChange={handleChange} />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label htmlFor='password'>Password</label>
+                </td>
+                <td>
+                  <input
+                    name='password'
+                    type='password'
+                    onChange={handleChange}
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>
+                  <button
+                    type='button'
+                    onClick={() => authenticate(credentials)}
+                  >
+                    Submit
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </form>
       </StyledContainer>
     </StyledWrapper>

@@ -44,7 +44,7 @@ const StyledNavLinks = styled.span`
     color: #ffffff;
     text-align: center;
     margin: 0 5px;
-    width: 50px;
+    // width: 50px;
     text-decoration: none;
     padding: 10px;
     background-color: rgba(0, 0, 0, 0.7);
@@ -60,7 +60,7 @@ export const Header = ({ isLoggedIn, logout }) => {
           <Link to='/'>Brand</Link>
         </StyledBrand>
         <StyledNavLinks>
-          <Link to='/First'>First</Link>
+          <Link to='/addDefect'>Add Defect</Link>
           <Link to='/Second'>Second</Link>
           <Link to='/Third'>Third</Link>
           {isLoggedIn === false ? (

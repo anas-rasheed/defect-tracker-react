@@ -9,6 +9,6 @@ export default function* rootSaga() {
     watchLoginSaga(),
     watchApiSaga(),
     watchDefectsSaga(),
-    fork(launchSaga),
+    launchSaga(),
   ]);
 }
