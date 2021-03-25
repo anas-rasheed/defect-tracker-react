@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { logout } from '../redux/slices/authSlice';
+import { logout } from '../../redux/slices/authSlice';
 
 const StyledNavbar = styled.nav`
   height: 60px;

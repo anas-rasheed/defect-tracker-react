@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
-import { authenticate } from '../redux/slices/authSlice';
+import { authenticate } from '../../redux/slices/authSlice';
 
 const StyledWrapper = styled.div`
   height: calc(100% - 60px);
