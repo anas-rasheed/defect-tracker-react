@@ -12,9 +12,9 @@ exports[`Header Component should render Header component 1`] = `
     </styled.span>
     <styled.span>
       <Link
-        to="/First"
+        to="/addDefect"
       >
-        First
+        Add Defect
       </Link>
       <Link
         to="/Second"

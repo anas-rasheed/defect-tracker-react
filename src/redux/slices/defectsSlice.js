@@ -12,16 +12,28 @@ const defectsSlice = createSlice({
 });
 export const { defectsList } = defectsSlice.actions;
 
-const apiCallOptions = {
+const apiGetCallOptions = {
   url: `fetchDefects`,
   method: 'GET',
 };
 
 export const getDefects = () =>
   api({
-    ...apiCallOptions,
-    onSuccess: `${apiSuccess.type}/${apiCallOptions.url}`,
-    onError: `${apiFailed.type}/${apiCallOptions.url}`,
+    ...apiGetCallOptions,
+    onSuccess: `${apiSuccess.type}/${apiGetCallOptions.url}`,
+    onError: `${apiFailed.type}/${apiGetCallOptions.url}`,
+  });
+
+const apiPostCallOptions = {
+  url: 'addDefect',
+  method: 'POST',
+};
+export const addDefect = formData =>
+  api({
+    ...apiPostCallOptions,
+    data: { ...formData, createdBy: 'admin' },
+    onSuccess: `${apiSuccess.type}/${apiPostCallOptions.url}`,
+    onError: `${apiFailed.type}/${apiPostCallOptions.url}`,
   });
 
 export default defectsSlice.reducer;

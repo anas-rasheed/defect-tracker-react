@@ -5,6 +5,10 @@ export function* defectsSaga({ payload }) {
   yield put(defectsList(payload));
 }
 
+export function* testSaga({ payload }) {
+  yield console.log(payload);
+}
 export function* watchDefectsSaga() {
   yield takeLatest('apiSuccess/fetchDefects', defectsSaga);
+  yield takeLatest('apiSuccess/addDefect', testSaga);
 }
