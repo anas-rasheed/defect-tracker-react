@@ -9,7 +9,7 @@ const StyledWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 4fr;
   place-items: center;
-  height: calc(100% - 60px);
+  height: calc(100% - 3.75rem);
   width: 100%;
 `;
 

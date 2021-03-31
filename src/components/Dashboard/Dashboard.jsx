@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
-import { PRIORITY } from '../common/constants';
+import { PRIORITY } from '../../common/constants';
 import {
   StyledFilters,
   StyledTable,
@@ -62,6 +62,7 @@ const Dashboard = ({ defectsList }) => {
           <select
             id='priority'
             name='priority'
+            value={searchParams.priority}
             onChange={handleChange}
             defaultValue=''
           >
@@ -139,6 +140,7 @@ const Dashboard = ({ defectsList }) => {
             })}
           </tbody>
         </StyledTable>
+        {defects.length === 0 ? <h3>No records found</h3> : null}
       </StyledTableContainer>
     </>
   );

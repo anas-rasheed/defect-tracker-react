@@ -1,13 +1,18 @@
+:root {
+  --primary-background: linear-gradient(
+    to right,
+    rgba(111, 252, 230, 0.8),
+    rgba(157, 160, 252, 1)
+  );
+  --oxford-blue: #182436;
+  --cool-gray: #8d9fba;
+  --accent: #404e63;
+}
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-  background: linear-gradient(
-    to right bottom,
-    rgba(111, 252, 230, 0.8),
-    rgba(157, 160, 252, 1)
-  );
-  position: relative;
+  background: #f4f4f4;
 }
 html,
 body,

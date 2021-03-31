@@ -13,9 +13,12 @@ export const StyledTable = styled.table`
 
 export const StyledFilters = styled.span`
   display: inline-grid;
-  grid-template-column: auto auto;
+  grid-template-columns: auto auto;
   > label {
     padding-right: 20px;
+  }
+  > select {
+    outline: none;
   }
 `;
 

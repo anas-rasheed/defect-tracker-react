@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
-import { DEFECT_STAGES, PRIORITY, PRIORITY_LEVELS } from '../common/constants';
+import {
+  DEFECT_STAGES,
+  PRIORITY,
+  PRIORITY_LEVELS,
+} from '../../common/constants';
 import { addDefect } from '../../redux/slices/defectsSlice';
 
 const StyledContainer = styled.div`
-  height: calc(100% - 60px);
+  height: calc(100% - 3.75rem);
   display: flex;
   justify-content: center;
   align-items: center;
