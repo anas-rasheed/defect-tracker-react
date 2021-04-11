@@ -60,11 +60,10 @@ const Dashboard = ({ defectsList }) => {
         <StyledFilters>
           <label htmlFor='priority'>Priority:</label>
           <select
+            onChange={handleChange}
             id='priority'
             name='priority'
             value={searchParams.priority}
-            onChange={handleChange}
-            defaultValue=''
           >
             <option value='' disabled>
               -Select-

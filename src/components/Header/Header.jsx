@@ -1,28 +1,46 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { logout } from '../../redux/slices/authSlice';
-import { StyledBrand, StyledNavbar, StyledNavLinks } from './HeaderStyles';
+import {
+  StyledBrand,
+  StyledMenu,
+  StyledMenuClose,
+  StyledMenuContainer,
+  StyledNavbar,
+  StyledNavLink,
+  StyledNavLinks,
+} from './HeaderStyles';
 
 export const Header = ({ isLoggedIn, logout }) => {
+  const [showLinks, setShowLinks] = useState(false);
+
+  const toggleLinks = () => {
+    setShowLinks(!showLinks);
+  };
   return (
     <header>
       <StyledNavbar>
         <StyledBrand>
-          <Link to='/'>Eagle Spy</Link>
+          <NavLink exact to='/'>
+            <b>Eagle Spy</b>
+          </NavLink>
         </StyledBrand>
         <StyledNavLinks>
-          <Link to='/addDefect'>Add Defect</Link>
-          <Link to='/Second'>Second</Link>
-          <Link to='/Third'>Third</Link>
+          <StyledNavLink to='/addDefect'>Add Defect</StyledNavLink>
+          <StyledNavLink to='/Second'>Second</StyledNavLink>
+          <StyledNavLink to='/Third'>Third</StyledNavLink>
           {isLoggedIn === false ? (
-            <Link to='/login'>Login</Link>
+            <StyledNavLink to='/login'>Login</StyledNavLink>
           ) : (
-            <Link to='/login' onClick={logout}>
+            <StyledNavLink to='/login' onClick={logout}>
               Logout
-            </Link>
+            </StyledNavLink>
           )}
         </StyledNavLinks>
+        <StyledMenuContainer onClick={toggleLinks}>
+          {!showLinks ? <StyledMenu /> : <StyledMenuClose />}
+        </StyledMenuContainer>
       </StyledNavbar>
     </header>
   );
